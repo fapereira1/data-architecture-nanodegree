@@ -36,7 +36,7 @@ create table human_resources.departament(
 
 create table human_resources.education(
 	education_id serial primary key,
-	education_level varchar(20) not null,
+	education_level varchar(70) not null,
 	created_at timestamp NOT NULL DEFAULT now(),
 	updated_at timestamp NOT NULL DEFAULT now()
 );
@@ -50,8 +50,8 @@ create table human_resources.location(
 
 create table human_resources.state(
 	state_id serial primary key,
-	state_nm varchar(50) not null,
-	location_id int references location(location_id) not null,
+	state_nm varchar(2) not null,
+	location_id int references human_resources.location(location_id) not null,
 	created_at timestamp NOT NULL DEFAULT now(),
 	updated_at timestamp NOT NULL DEFAULT now()
 );
@@ -59,7 +59,7 @@ create table human_resources.state(
 create table human_resources.city(
 	city_id serial primary key,
 	city_nm varchar(50) not null,
-	state_id int references state(state_id) not null,
+	state_id int references human_resources.state(state_id) not null,
 	created_at timestamp NOT NULL DEFAULT now(),
 	updated_at timestamp NOT NULL DEFAULT now()
 );
@@ -67,7 +67,7 @@ create table human_resources.city(
 create table human_resources.address(
 	address_id serial primary key,
 	address_desc varchar(100) not null,
-	city_id int references city(city_id) not null, 
+	city_id int references human_resources.city(city_id) not null, 
 	created_at timestamp NOT NULL DEFAULT now(),
 	updated_at timestamp NOT NULL DEFAULT now()
 );
@@ -76,7 +76,7 @@ create table human_resources.employee(
 	employee_id serial,
 	employee_nm varchar(50) not null,
 	employee_email varchar(50) not null,
-	education_id int references education(education_id) not null,
+	education_id int references human_resources.education(education_id) not null,
 	employee_key varchar(6),
 	created_at timestamp NOT NULL DEFAULT now(),
 	updated_at timestamp NOT NULL DEFAULT now(),
@@ -86,15 +86,15 @@ create table human_resources.employee(
 
 create table human_resources.employee_registry(
 	id serial primary key,
-	employee_id int references employee(employee_id) not null,
-	job_id int references job(job_id) not null,
+	employee_id int references human_resources.employee(employee_id) not null,
+	job_id int references human_resources.job(job_id) not null,
 	hire_date date not null,
 	start_date date not null,
 	end_date date not null,
-	manager_id int references employee(employee_id) not null,
-	salary_id int references salary(salary_id) not null,
-	departament_id int references departament(departament_id) not null,
-	address_id int references address(address_id) not null,
+	manager_id int references human_resources.employee(employee_id) not null,
+	salary_id int references human_resources.salary(salary_id) not null,
+	departament_id int references human_resources.departament(departament_id) not null,
+	address_id int references human_resources.address(address_id) not null,
 	created_at timestamp NOT NULL DEFAULT now(),
 	updated_at timestamp NOT NULL DEFAULT now()
 );
