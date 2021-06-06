@@ -8,9 +8,11 @@
 --
 -- 31/05/20201  Fabio Augusto Pereira
 --      Insert statements
+-- 05/06/2021  Fabio Augusto Pereira
+--      Model corrections
 -------------------------------------------------------------------------------
 
-insert into proj_stg (Emp_ID, Emp_NM, email, hire_dt, job_title, salary, department_nm, manager, start_dt, end_dt, location, address, city, state, education_lvl)
+insert into human_resources.proj_stg (Emp_ID, Emp_NM, email, hire_dt, job_title, salary, department_nm, manager, start_dt, end_dt, location, address, city, state, education_lvl)
 values 
 ('E17469',	'Haifa Hajiri',	'Haifa.Hajiri@TechCorp.com','	2003-12-17	','Administrative Assistant',	47418	,	'Distribution',	'Allison Gentle','	2003-12-17	','	2100-01-01	','West Coast',	'705 James Way',	'San Francisco',	'CA',	'No College'),
 ('E27621',	'Wendell Mobley',	'Wendell.Mobley@TechCorp.com','	2013-11-27	','Administrative Assistant',	28969	,	'Distribution',	'Allison Gentle','	2013-11-27	','	2100-01-02	','West Coast',	'705 James Way',	'San Francisco',	'CA',	'Some College'),
@@ -115,7 +117,7 @@ values
 ('E28092',	'Tuan Yang',	'Tuan.Yang@TechCorp.com','	2008-11-01	','Sales Rep',	174651	,	'Product Development',	'Conner Kinch','	2008-11-01	','	2100-04-11	','West Coast',	'705 James Way',	'San Francisco',	'CA',	'Bachelors Degree');
 
 
-insert into proj_stg (Emp_ID, Emp_NM, email, hire_dt, job_title, salary, department_nm, manager, start_dt, end_dt, location, address, city, state, education_lvl)
+insert into human_resources.proj_stg (Emp_ID, Emp_NM, email, hire_dt, job_title, salary, department_nm, manager, start_dt, end_dt, location, address, city, state, education_lvl)
 values 
 
 ('E28638',	'Marie Dumadara',	'Marie.Dumadara@TechCorp.com','	2004-06-02	','Sales Rep',	123909	,	'Product Development',	'Conner Kinch','	2004-06-02	','	2100-04-12	','Midwest',	'1300 Nicollet Mall',	'Minnapolis',	'MN',	'Bachelors Degree'),
