@@ -8,8 +8,6 @@
 --
 -- 31/05/20201  Fabio Augusto Pereira
 --      Insert statements
--- 05/06/2021  Fabio Augusto Pereira
---      Model corrections
 -------------------------------------------------------------------------------
 
 insert into human_resources.proj_stg (Emp_ID, Emp_NM, email, hire_dt, job_title, salary, department_nm, manager, start_dt, end_dt, location, address, city, state, education_lvl)
